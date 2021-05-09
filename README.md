@@ -106,7 +106,7 @@ The commands needed to run the Ansible configuration for the Elk-Server are:
 -  Move Playbooks and hosts file Into `/etc/ansible`
 - cp ELK-STACK/playbooks/* .
 - cp ELK-STACK/files/* ./files
-- - Run ansible-playbook elksetup.yml
+- Run ansible-playbook elksetup.yml
 - After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
 - Run sudo docker ps
 - Since the Elk server runs on port 5601 you need to create an incoming rule for the security group that allows TCP traffic over the port 5601 from your IP address.

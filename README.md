@@ -97,15 +97,15 @@ SSH into the control node and follow the steps below:
 http://[your.VM.IP]:5601/app/kibana
 
 The commands needed to run the Ansible configuration for the Elk-Server are:
-SSH into jumpBox Vm ssh azadmin@13.77.176.12
-Run sudo docker container list -a
-Run sudo docker start container [Container name]
-Run sudo docker attach container [Container name]
-Update the hosts file in /etc/ansible/[hosts](https://github.com/lheneryf/ELK-STACK/blob/main/hosts)
-Then create new Ansible playbook to use for your new Elk Vm curl [elksetup](https://github.com/lheneryf/ELK-STACK/blob/main/elksetup.yml)
-Run ansible-playbook elk.yml
-After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
-Run sudo docker ps
-Since the Elk server runs on port 5601 you need to create an incoming rule for the security group that allows TCP traffic over the port 5601 from your IP address.
-Check that you can load the ELK stack server at http://[your.VM.IP]:5601/app/kibana.
-If everthing works correcty, you should see the home webpage of kibana.
+- SSH into jumpBox Vm ssh azadmin@13.77.176.12
+- Run sudo docker container list -a
+- Run sudo docker start container [Container name]
+- Run sudo docker attach container [Container name]
+- Update the hosts file in /etc/ansible/[hosts](https://github.com/lheneryf/ELK-STACK/blob/main/hosts)
+- Then create new Ansible playbook to use for your new Elk Vm curl [elksetup](https://github.com/lheneryf/ELK-STACK/blob/main/elksetup.yml)
+- Run ansible-playbook elk.yml
+- After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
+- Run sudo docker ps
+- Since the Elk server runs on port 5601 you need to create an incoming rule for the security group that allows TCP traffic over the port 5601 from your IP address.
+- Check that you can load the ELK stack server at http://[your.VM.IP]:5601/app/kibana.
+- If everthing works correcty, you should see the home webpage of kibana.

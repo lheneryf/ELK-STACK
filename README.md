@@ -89,14 +89,23 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the []() file to ansible container []().
+- Copy the [playbook](https://github.com/lheneryf/ELK-STACK/blob/main/filebeat-playbook.yml) file to ansible container []().
 - Update the [hosts configuration](https://github.com/lheneryf/ELK-STACK/blob/main/hosts) file to include IP addresses. 
 - Run the playbook, and navigate to the ELK-STACK-AM and web-1-3[]() to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Update the [Hosts](https://github.com/lheneryf/ELK-STACK/blob/main/hosts) file to specify what machines you want to install the filebeat and metricbeat on. 
 - Which URL do you navigate to in order to check that the ELK server is running?
 http://[your.VM.IP]:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+The commands needed to run the Ansible configuration for the Elk-Server are:
+SSH into jumpBox Vm ssh azadmin@13.77.176.12
+Run sudo docker container list -a
+Run sudo docker start container [Container name]
+Run sudo docker attach container [Container name]
+Update the hosts file in /etc/ansible/[]()
+Then create new Ansible playbook to use for your new Elk Vm curl [elk.yml](
+Run ansible-playbook elk.yml
+After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
+Run sudo docker ps
+Since the Elk server runs on port 5601 you need to create an incoming rule for the security group that allows TCP traffic over the port 5601 from your IP address.
+Check that you can load the ELK stack server at http://[your.VM.IP]:5601/app/kibana.
+If everthing works correcty, you should see the home webpage of kibana.

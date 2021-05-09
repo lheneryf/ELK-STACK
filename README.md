@@ -102,8 +102,10 @@ The commands needed to run the Ansible configuration for the Elk-Server are:
 - Run sudo docker start container [Container name]
 - Run sudo docker attach container [Container name]
 - Update the hosts file in /etc/ansible/[hosts](https://github.com/lheneryf/ELK-STACK/blob/main/hosts)
-- Then create new Ansible playbook to use for your new Elk Vm git clone(https://github.com/lheneryf/ELK-STACK/blob/main/elksetup.yml)
+- Then create new Ansible playbook to use for your new Elk Vm git clone https://github.com/lheneryf/ELK-STACK.git
 -  Move Playbooks and hosts file Into `/etc/ansible`
+- cp ELK-STACK/playbooks/* .
+- cp ELK-STACK/files/* ./files
 - - Run ansible-playbook elksetup.yml
 - After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
 - Run sudo docker ps

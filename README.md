@@ -101,7 +101,7 @@ SSH into jumpBox Vm ssh azadmin@13.77.176.12
 Run sudo docker container list -a
 Run sudo docker start container [Container name]
 Run sudo docker attach container [Container name]
-Update the hosts file in /etc/ansible/[]()
+Update the hosts file in /etc/ansible/[hosts](https://github.com/lheneryf/ELK-STACK/blob/main/hosts)
 Then create new Ansible playbook to use for your new Elk Vm curl [elk.yml](
 Run ansible-playbook elk.yml
 After the Elk container is installed double check elk-docker container is running by SSH into Elk VM ssh azureuser@[private IP address]
